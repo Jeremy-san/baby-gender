@@ -1,0 +1,10 @@
+<div class="vote-management-container">
+  <h2>Gestion des votes</h2>
+  <div class="vote-grid">
+    <div class="vote-card" *ngFor="let vote of votes">
+      <span class="vote-name">{{ vote.name }}</span>
+      <span class="vote-gender">{{ vote.gender }}</span>
+      <button (click)="deleteVote(vote.id)">Supprimer</button>
+    </div>
+  </div>
+</div>

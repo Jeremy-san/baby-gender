@@ -1,0 +1,84 @@
+.vote-management-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vote-management-container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Grid for votes */
+  .vote-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .vote-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .vote-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .vote-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .vote-gender {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin-top: 10px;
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #e53935;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 768px) {
+    .vote-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .vote-grid {
+      grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+  }
+  

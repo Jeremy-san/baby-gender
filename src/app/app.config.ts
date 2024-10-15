@@ -3,7 +3,26 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC9V4J6q56cx5wz7p18Q2O8wFt8yGb_gmI",
+  authDomain: "baby-gender-ea862.firebaseapp.com",
+  databaseURL: "https://baby-gender-ea862-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "baby-gender-ea862",
+  storageBucket: "baby-gender-ea862.appspot.com",
+  messagingSenderId: "327850689661",
+  appId: "1:327850689661:web:f58adb5ad9396a4b6edd14",
+  measurementId: "G-E5KE0Q0V9B"
+};
+
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideRouter(routes), provideClientHydration(), 
+    provideFirebaseApp(() => initializeApp(firebaseConfig
+      )), 
+      provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase())]
 };

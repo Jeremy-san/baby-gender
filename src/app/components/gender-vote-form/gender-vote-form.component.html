@@ -1,0 +1,16 @@
+<form (ngSubmit)="submitVote()" #voteForm="ngForm">
+  <label for="name">Nom du participant :</label>
+  <input type="text" id="name" [(ngModel)]="vote.name" name="name" required />
+
+  <label>
+    <input type="radio" name="gender" [(ngModel)]="vote.gender" value="boy" required /> Garçon
+  </label>
+  <label>
+    <input type="radio" name="gender" [(ngModel)]="vote.gender" value="girl" required /> Fille
+  </label>
+  
+  <button type="submit" [disabled]="voteForm.invalid">Voter</button>
+
+  <p *ngIf="voteSuccess" class="vote-success">Merci pour votre vote !</p>
+  <p *ngIf="duplicateName" class="error">Nom déjà utilisé, veuillez en choisir un autre.</p>
+</form>
